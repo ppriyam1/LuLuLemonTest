@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="toz-m3-zYR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Show Garment View Controller-->
+        <scene sceneID="nCI-2s-bdk">
+            <objects>
+                <viewController id="toz-m3-zYR" customClass="ShowGarmentViewController" customModule="LuLuLemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jgo-CO-EuR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ho2-H2-Chs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="List" id="2Vn-SF-15f">
+                                        <barButtonItem key="rightBarButtonItem" id="G1s-9s-Tux">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dRH-Fe-cJf">
+                                                <rect key="frame" x="374" y="11" width="20" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="plus.circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="addButtonPressed:" destination="toz-m3-zYR" eventType="touchUpInside" id="a7E-d1-TKO"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-Vs-Gxf">
+                                <rect key="frame" x="0.0" y="103" width="414" height="759"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JjN-G0-cqN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                        <segments>
+                                            <segment title="Alpha"/>
+                                            <segment title="Creation Time"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentControl:" destination="toz-m3-zYR" eventType="valueChanged" id="0M5-bK-mso"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u98-m4-rLo">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="687"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="garmentCell" id="78y-YJ-4UY">
+                                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="78y-YJ-4UY" id="FB1-BW-oof">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="u98-m4-rLo" firstAttribute="height" secondItem="JjN-G0-cqN" secondAttribute="height" multiplier="12" id="K8B-cR-6Le"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kp3-lW-FgH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GsC-Vs-Gxf" firstAttribute="leading" secondItem="kp3-lW-FgH" secondAttribute="leading" id="AG0-Up-3fo"/>
+                            <constraint firstItem="Ho2-H2-Chs" firstAttribute="top" secondItem="kp3-lW-FgH" secondAttribute="top" id="Aax-sZ-9jU"/>
+                            <constraint firstItem="Ho2-H2-Chs" firstAttribute="trailing" secondItem="kp3-lW-FgH" secondAttribute="trailing" id="Ly4-hS-LIU"/>
+                            <constraint firstItem="GsC-Vs-Gxf" firstAttribute="top" secondItem="Ho2-H2-Chs" secondAttribute="bottom" constant="15" id="VOZ-fu-OJb"/>
+                            <constraint firstItem="kp3-lW-FgH" firstAttribute="trailing" secondItem="GsC-Vs-Gxf" secondAttribute="trailing" id="Woj-LC-PCR"/>
+                            <constraint firstItem="kp3-lW-FgH" firstAttribute="bottom" secondItem="GsC-Vs-Gxf" secondAttribute="bottom" id="ceL-zR-0Vj"/>
+                            <constraint firstItem="Ho2-H2-Chs" firstAttribute="leading" secondItem="kp3-lW-FgH" secondAttribute="leading" id="xbk-5T-9cf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="segmentControl" destination="JjN-G0-cqN" id="18t-bN-J97"/>
+                        <outlet property="tableView" destination="u98-m4-rLo" id="SNc-S6-Aly"/>
+                        <segue destination="Tzg-Ge-VXC" kind="show" identifier="GarmentSegue" id="zbE-ZJ-GzA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNU-mx-Qg3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="646" y="45"/>
+        </scene>
+        <!--Save Garment View Controller-->
+        <scene sceneID="Hrq-YY-vaS">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Tzg-Ge-VXC" customClass="SaveGarmentViewController" customModule="LuLuLemon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1oC-jb-QF4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-XK-qzj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="ADD" id="rXp-dj-fyY">
+                                        <barButtonItem key="rightBarButtonItem" id="fpE-CX-MUD">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="7k1-Rj-bTt">
+                                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Save"/>
+                                                <connections>
+                                                    <action selector="saveButtonPressed:" destination="Tzg-Ge-VXC" eventType="touchUpInside" id="sTp-lx-0xU"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rlc-mn-b4H">
+                                <rect key="frame" x="10" y="98" width="394" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garment Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HJO-Jq-6PG">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="40"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9kh-tL-COU">
+                                        <rect key="frame" x="0.0" y="50" width="394" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="NQ8-sq-9gu"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="k26-Fl-IhY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rlc-mn-b4H" firstAttribute="leading" secondItem="k26-Fl-IhY" secondAttribute="leading" constant="10" id="1Uv-eu-EgR"/>
+                            <constraint firstItem="k26-Fl-IhY" firstAttribute="trailing" secondItem="Rlc-mn-b4H" secondAttribute="trailing" constant="10" id="K63-Yj-A9D"/>
+                            <constraint firstItem="k26-Fl-IhY" firstAttribute="trailing" secondItem="3xQ-XK-qzj" secondAttribute="trailing" id="NYm-rz-zNW"/>
+                            <constraint firstItem="3xQ-XK-qzj" firstAttribute="leading" secondItem="1oC-jb-QF4" secondAttribute="leading" id="QdB-tf-IfK"/>
+                            <constraint firstItem="Rlc-mn-b4H" firstAttribute="top" secondItem="3xQ-XK-qzj" secondAttribute="bottom" constant="10" id="vxJ-9K-9Br"/>
+                            <constraint firstItem="3xQ-XK-qzj" firstAttribute="top" secondItem="k26-Fl-IhY" secondAttribute="top" id="wHy-Zf-ibr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KC8-9E-ieO"/>
+                    <connections>
+                        <outlet property="addGarmentTextFeild" destination="9kh-tL-COU" id="nt8-Jv-QFx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRk-Uu-Pad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="45"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
